@@ -1,0 +1,30 @@
+<%include ../templates/header %>
+
+    <div class="container">
+
+        <div class="jumbotron mt-2 py-4 text-center bg-white">
+            <h1 class="display-4">Campsites</h1>
+            <p class="lead">See our selection of campsites from all over the world!!!</p>
+            <p><a class="btn btn-primary btn-md" href="campsites/new" role="button">Add New Campsite</a></p>
+            <hr>
+        </div>
+        <div class="row text-center">
+            <% campsites.forEach(function(camp){ %>
+
+                <div class="col-md-3 col-sm-6 d-flex">
+                    <figure class="img-thumbnail d-flex flex-column">
+                        <img class="figure-img rounded h-100" src="<%=camp.image%>">
+                        <figcaption class="figure-caption">
+                            <h4>
+                                <%=camp.name%>
+                            </h4>
+                            <a href="/campsites/<%=camp._id%>" class="btn btn-primary"> Show more </a>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <% }); %>
+        </div>
+    </div>
+
+    <%include ../templates/footer %>

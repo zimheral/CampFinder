@@ -1,0 +1,26 @@
+<%include ../templates/header %>
+
+<div id="campforms" class="container-fluid text-center">
+    
+    <h1 class="display-4"> Add a comment to camp <strong><%=campsite.name%></strong> </h1> 
+    
+    <div class="row">
+        
+        <div style="margin:20px auto">
+        
+            <form action="/campsites/<%=campsite._id%>/comments" method="POST">
+              <div class="form-group">
+                <input type="text" class="form-control" name="comment[text]" placeholder="text" >
+              </div>
+                            
+              <button type="submit" class="btn btn-primary container-fluid mt-2">Submit</button>
+            </form>
+            
+            <a href="/campsites"> Go back </a>
+            
+        </div>
+        
+    </div>
+</div>
+
+<%include ../templates/footer %>

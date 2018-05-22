@@ -1,0 +1,26 @@
+<%include ../templates/header %>
+
+  <div id="campforms" class="container-fluid text-center">
+
+    <h1 class="display-4"> Enter your Camp Details </h1>
+
+    <div class="row">
+
+      <div style="margin:20px auto">
+
+        <form action="/campsites" method="POST">
+          <input type="text" class="form-control" name="campsite[name]" placeholder="Camp name?">
+          <input type="text" class="form-control" name="campsite[image]" placeholder="Image url...">
+          <input type="text" class="form-control" name="campsite[description]" placeholder="Camp description">
+          <input type="number" class="form-control" name="campsite[price]" placeholder="Camp price" step="0.5" min="1">
+          <button type="submit" class="btn btn-primary container-fluid mt-2">Submit</button>
+        </form>
+
+        <a href="/campsites"> Go back </a>
+
+      </div>
+
+    </div>
+  </div>
+
+  <%include ../templates/footer %>

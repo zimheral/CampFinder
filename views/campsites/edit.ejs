@@ -1,0 +1,27 @@
+<%include ../templates/header %>
+
+  <div id="campforms" class="container-fluid text-center">
+
+    <h1 class="display-4"> Edit camp
+      <%=campsite.name%>
+    </h1>
+
+    <div class="row">
+      <div style="margin:20px auto">
+        <form action="/campsites/<%=campsite._id%>?_method=PUT" method="POST">
+          <input type="text" class="form-control" name="campsite[name]" value="<%=campsite.name%>">
+          <input type="text" class="form-control" name="campsite[image]" value="<%=campsite.image%>">
+          <input type="text" class="form-control" name="campsite[description]" value="<%=campsite.description%>">
+          <input type="number" class="form-control" name="campsite[price]" value="<%=campsite.price%>" step="0.5" min="1">
+          <button type="submit" class="btn btn-primary container-fluid mt-2">Update</button>
+        </form>
+
+        <a href="/campsites"> Go back </a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <%include ../templates/footer %>

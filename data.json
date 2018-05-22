@@ -1,0 +1,42 @@
+{"userSeed" : [
+    {
+        "username":"Peter",
+        "password":"peter"
+    },
+    {
+        "username":"Sarah",
+        "password":"sarah"
+    },
+    {
+        "username":"Stephanie",
+        "password":"stephanie"
+    }
+],
+"campSeed" : [
+    {
+        "name":"Camp 1",
+        "image":"https://farm5.staticflickr.com/4091/5189683751_0ea9708c4d.jpg",
+        "description":"This is the best camp of all because it's camp 1",
+        "price":"10"
+    },
+    {
+        "name":"Camp 2",
+        "image":"https://farm6.staticflickr.com/5710/22701837118_e86ebd938f.jpg",
+        "description":"This is the best camp of all because it's camp 2",
+        "price":"15"
+    },
+    {
+        "name":"Camp 3",
+        "image":"https://farm1.staticflickr.com/742/22479917874_8eabbe30c4.jpg",
+        "description":"This is the best camp of all because it's camp 3",
+        "price":"12"
+    }
+],
+"commentSeed" : [
+    "Great camp had an amazing time there",
+    "Beautiful, perfect for rest",
+    "Amazing sights, great barbecues",
+    "Easy to get there, very quiet place",
+    "Lovely experience, would do it again",
+    "Out of this world, incredible experience"
+]}

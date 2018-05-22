@@ -1,0 +1,67 @@
+
+<%include ../templates/header %>
+
+<div class="container">
+    <div class=row>
+        <div class="col-md-3">
+            <p class="lead">Campfinder</p>
+            <div class="list-group">
+                <a href="/campsites" class="list-group-item list-group-item-action">Home</a>
+            </div>         
+        </div>
+        <div class="col-md-9">
+            <figure class="container-fluid figure img-thumbnail">
+                <img class = "figure-img"  src="<%=campsite.image%>">
+                <figcaption class="figure-caption">
+                    <h4 class="float-right">$<%=campsite.price%>/Day</h4>
+                    <h4><a href="#"><%=campsite.name%></a></h4>
+                    <p><%=campsite.description%></p>
+                    <p><em>Posted by: <%=campsite.author.username%></em></p>
+                    
+                    <%if(loggedUser && campsite.author.id.equals(loggedUser._id)){%>
+
+                        <a class="btn btn-warning" href="/campsites/<%=campsite._id%>/edit">Edit</a>
+                        <form class="del-campsite" action="/campsites/<%=campsite._id%>?_method=DELETE" method="post">
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                    <%}%>
+
+                </figcaption>
+            </figure> 
+            
+            <div class="card bg-light">
+                <div class="card-body">
+                    <div class="container-fluid text-right">
+                        <a class="btn btn-info" href="/campsites/<%=campsite._id%>/comments/new">Add comment</a>
+                    </div>
+
+                    <hr>
+
+                    <%campsite.comments.forEach(function(comment){ %>
+                    <div class="row">
+                        <div class="col-md-12"> 
+                            <strong><%=comment.author.username%></strong>
+                            <span class="float-right">10 days Ago</span>
+                            <p>
+                                <%=comment.text%>
+                            </p> 
+
+                            <%if(loggedUser && comment.author.id.equals(loggedUser._id)){%>
+                                <a class="btn btn-sm btn-warning" href="/campsites/<%=campsite._id%>/comments/<%=comment._id%>/edit">Edit</a>
+                                <form class="del-campsite" action="/campsites/<%=campsite._id%>/comments/<%=comment._id%>?_method=DELETE" method="post">
+                                    <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                                </form>  
+                            <%}%>      
+                        </div>                               
+                    </div>
+                    <hr>
+                    <%})%>
+                </div>                
+            </div>  
+        </div>             
+    </div>    
+</div>
+
+ <a href="/campsites"> Go back </a>
+
+<%include ../templates/footer %>

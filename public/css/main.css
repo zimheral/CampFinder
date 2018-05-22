@@ -1,0 +1,20 @@
+.figure-img{
+    width: 100%;
+}
+
+.figure-caption.position-absolute{
+    bottom: 0;
+}
+
+.img-thumbnail{
+    padding: 0;
+}
+
+.del-campsite{
+    display: inline;
+}
+
+#campforms{
+    position: absolute;
+    top:25%;
+}
