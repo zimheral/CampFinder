@@ -33,7 +33,11 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.set ("view engine", "ejs");
+
+//database configuration
 mongoose.connect('mongodb://localhost/campfinder');
+
+//generate random data
 seedDB();
 
 app.use("/",indexRoute);
